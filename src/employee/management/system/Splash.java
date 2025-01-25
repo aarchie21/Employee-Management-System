@@ -2,8 +2,9 @@ package employee.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Splash extends JFrame{
+public class Splash extends JFrame implements ActionListener{
     
     Splash()
     {
@@ -27,6 +28,7 @@ public class Splash extends JFrame{
         clickhere.setBounds(400,400,300,70);
         clickhere.setBackground(Color.BLACK);
         clickhere.setForeground(Color.WHITE);
+        clickhere.addActionListener(this);
         image.add(clickhere);
         
         
@@ -53,6 +55,11 @@ public class Splash extends JFrame{
                 
             }
         }
+    }
+    public void actionPerformed(ActionEvent ae)
+    {
+        setVisible(false);
+        new Login();
     }
     public static void main(String args[])
     {
